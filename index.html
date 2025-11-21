@@ -22,5 +22,43 @@
     </form>
     
     <p id="message"></p>
+
+
+
+    
+
+    <h2>second  validation form using API</h2>
+
+    <form id="myyForm">
+        <lable><em>Username:</em></lable><br>
+        <input type="text" id="Username" required><br>
+
+        <br>
+
+        <label>Email:</label><br>
+        <input type="email" id="email" required><br><br>
+        
+        <button type="submit">Submit</button>
+    </form>
+
+    <p id="message" style="color:orangered;"></p>
+    
+    <script>
+        const form = document.getElementById("myForm");
+        const message = document.getElementById("message");
+
+        form.addEventListener("submit", function (event) {
+            event.preventDefault();  
+
+            if (form.checkValidity()) {
+                message.style.color = "green";
+                message.textContent = "Form is valid!";
+            } else {
+                message.style.color = "red";
+                message.textContent = "Please fill out all fields correctly.";
+            }
+        });
+    </script>
+
 </body>
 </html>
